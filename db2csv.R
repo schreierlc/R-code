@@ -8,6 +8,12 @@ library("tcltk")
 library("tcltk2")
 library("timeDate")
 
+if (.Platform$OS.type == "unix") {
+  winOS = FALSE
+} else {
+  winOS = TRUE 
+}
+
 #connect to the database
 sqlite    <- dbDriver("SQLite")
 
